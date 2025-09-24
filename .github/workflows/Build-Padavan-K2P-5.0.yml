@@ -111,7 +111,8 @@ jobs:
       if: always()
       with:
         name: Padavan-packages
-        path: /opt/images    - name: Build Firmware
+        path: /opt/images    
+    - name: Build Firmware
       env:
         TNAME: K2P
         KERNEL: 3.4
