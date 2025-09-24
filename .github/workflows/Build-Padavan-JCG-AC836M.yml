@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 修正此处
+    runs-on: ubuntu-22.04  # 修正此处
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
@@ -21,7 +21,7 @@ jobs:
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
         cpio git gettext automake autopoint texinfo build-essential help2man \
-        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
+        pkg-config zlib1g-dev libgmp3-dev lsb-core libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       env:
         KERNEL: 3.4
@@ -82,19 +82,19 @@ jobs:
         #echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  #frpc
         #echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
         ##科学上网##
-        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config 
-        #echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config 
+        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config 
+        #echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config 
         ##vpn
-        #echo  "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
+        #echo  "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=n" >> .config
 
-        #echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
         
         ###############################################################################
         ##########
