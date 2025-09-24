@@ -1,5 +1,5 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build-Padavan-JCG-AC836M
+name: Build-JCG-AC836M
 
 on: 
   workflow_dispatch:
@@ -82,11 +82,11 @@ jobs:
         #echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  #frpc
         #echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
         ##科学上网##
-        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config 
-        #echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config 
+        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config 
+        #echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config 
         ##vpn
         #echo  "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
         #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
@@ -111,4 +111,4 @@ jobs:
       if: always()
       with:
         name: Padavan-packages
-        path: /opt/images    
+        path: /opt/images
